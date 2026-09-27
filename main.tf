@@ -1,6 +1,4 @@
-locals {
-  bucket_name = "dcdvdfvscscscsdcsdev"
-}
+
 
 resource "aws_instance" testserver1{
     ami          = var.ami_id
@@ -90,9 +88,6 @@ resource "aws_internet_gateway" mygateway {
   depends_on = [aws_vpc.myvpc]
 }
 
-resource "aws_s3_bucket" mybucket3 {
-  bucket = local.bucket_name
-}
 
 data "aws_vpc" importtest {
   filter {
